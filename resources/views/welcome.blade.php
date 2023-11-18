@@ -4,7 +4,8 @@
 
 @section('Content')
 
-    <h1>Cadastro de Carros - PHPLaravel</h1>
-    <img src="/img/carros_garagem.jpg" alt="Banner"> 
+    @foreach($cars as $car)
+        <p>{{ $car->model }} -- {{ $car->description }}</p>
+    @endforeach
 
 @endsection

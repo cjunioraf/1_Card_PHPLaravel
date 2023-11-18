@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
 /* Rota chama a classe index da controller CarController */
 Route::get('/', [CarController::class,'index']);
+/* Rota chama a classe create da controller CarController */
 Route::get('/cars/create', [CarController::class,'create']);
 
 
