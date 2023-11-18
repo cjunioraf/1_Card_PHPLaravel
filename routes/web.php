@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+/* Rota '/' chama a View(Tela) resource/views/welcome.blade.php */
 Route::get('/', function () {
     return view('welcome');
 });
