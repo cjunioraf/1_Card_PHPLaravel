@@ -32,8 +32,22 @@ header {
     border-color: #c28008;
 }
 
-/* navbar main.blade.php */
+.msg {
+    /*COR DE FUNDO*/
+    background-color: #D4EDDA; 
+    /*COR DE LETRA*/
+    color: #155724;  
+    /*BORDA EM VOLTA*/
+    border: 2px solid #c3e6cb;
+    /*LARGURA*/
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    /*ESPAÇAMENTO INTERNO*/
+    padding: 10px;    
+}
 
+/* navbar main.blade.php */
 #navbar {
     justify-content: space-between;
     background-color: #fff;
@@ -136,6 +150,24 @@ footer {
 
 footer p {
     margin-bottom: 0;
+}
+
+/* Car create page */
+#car-create-container {
+    padding: 30px;
+}
+
+#car-create-container label{
+    /*Negrito*/
+    font-weight: bold;
+}
+
+#car-create-container input,
+#car-create-container select,
+#car-create-container textarea {
+    /*tamanho fonte*/
+    font-size: 12px;
+
 }
 
 

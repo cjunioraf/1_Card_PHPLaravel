@@ -26,7 +26,7 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     
                     <a href="/" class="navbar-brand">
-                        <img src="/img/carro_1.png" alt="CAFEJ Cars">
+                        <img src="/img/carro.png" alt="CAFEJ Cars">
                     </a>
 
                     <ul class="navbar-nav">
@@ -51,9 +51,20 @@
 
             </nav>
 
-        </header>
+        </header>      
 
-        @yield('Content')
+        <main>
+
+            <div class="container-fluid">
+                <div class="row">
+                    @if(session('msg'))
+                        <p class="msg"> {{session('msg')}}</p>
+                    @endif
+                    @yield('Content')
+                </div>
+            </div>
+
+        </main>    
 
         <footer>
             <p>CAFEJ Carros &copy; 2023</p>

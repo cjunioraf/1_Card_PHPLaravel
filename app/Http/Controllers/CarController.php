@@ -17,4 +17,19 @@ class CarController extends Controller
     public function create(){
         return view('cars.create');
     }
+
+    public function store(Request $request){
+        
+        $car = new Car;
+        $Msg = "Carro salvo com sucesso!";
+        
+        $car->model = $request->model;
+        $car->city = $request->city;
+        $car->zerokm = $request->zerokm;  
+        $car->description = $request->description;
+        
+        $car->save();
+
+        return redirect('/')->with('msg', $Msg);
+    }
 }
