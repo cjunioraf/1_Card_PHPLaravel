@@ -7,18 +7,60 @@
 
         <title>@yield('title')</title>
 
+        <!--Fonte do Google -->        
+        <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+        <!-- CSS bootsTrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- CSS -->
         <link rel="stylesheet" href="/css/styles.css">
-        <script src="/js/scripts.js"></script>
-        
+        <!-- JS -->
+        <script src="/js/scripts.js"></script>        
     </head>
 
     <body>
+
+        <header>
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+                
+                <div class="collapse navbar-collapse" id="navbar">
+                    
+                    <a href="/" class="navbar-brand">
+                        <img src="/img/carro_1.png" alt="CAFEJ Cars">
+                    </a>
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/cars/create" class="nav-link">Cadastrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">Entrar</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">PHP Laravel</a>
+                        </li>
+
+                    </ul>    
+
+                </div>
+
+            </nav>
+
+        </header>
 
         @yield('Content')
 
         <footer>
             <p>CAFEJ Carros &copy; 2023</p>
         </footer>
+        <!--icones -->   
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
     </body>
     
 </html>

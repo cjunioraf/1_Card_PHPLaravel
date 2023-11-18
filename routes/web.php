@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 /* Rota '/' chama a View(Tela) resource/views/welcome.blade.php */
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\CarController;
+/* Rota chama a classe index da controller CarController */
+Route::get('/', [CarController::class,'index']);
+Route::get('/cars/create', [CarController::class,'create']);
+
+
