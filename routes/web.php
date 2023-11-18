@@ -18,6 +18,7 @@ use App\Http\Controllers\CarController;
 Route::get('/', [CarController::class,'index']);
 /* Rota chama a classe create da controller CarController */
 Route::get('/cars/create', [CarController::class,'create']);
+Route::get('/cars/{id}', [CarController::class,'show']);
 /* Rota chama a classe store da controller CarController */
 Route::post('/cars', [CarController::class,'store']);
 

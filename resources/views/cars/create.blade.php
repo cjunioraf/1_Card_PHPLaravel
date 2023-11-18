@@ -8,9 +8,14 @@
 
         <h1>Cadastre seu carro</h1>   
 
-        <form action="/cars" method="POST">
+        <form action="/cars" method="POST" enctype="multipart/form-data">
             
             @csrf
+
+            <div class="form-group">
+                <label for="image">Imagem do Carro:</label>                
+                <input type="file" id="image" name="image" class="from-control-file">
+            </div>
 
             <div class="form-group">
                 <label for="model">Modelo:</label>                
