@@ -111,7 +111,7 @@ header {
 }
 
 #cars-container img {    
-    max-height: 150px;
+    max-height: 230px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px; 
     margin-bottom: 10px;
@@ -155,6 +155,50 @@ footer p {
     margin-bottom: 0;
 }
 
+/* Car show page */
+#image-container, 
+#info-container {
+    margin-top: 30px;
+}
+
+#image-container img{
+    /* arredonda os cantos */
+    border-radius: 10px;
+}
+
+#info-container h1{
+    /* tamanho da fonte */
+    font-size: 30px;
+    /* Negrito */
+    font-weight: 900;    
+}
+
+#info-container p {
+    margin: 2px;
+    /* tamanho da fonte */
+    font-size: 14px;
+    /* como tem ícone junto ajuda a centralizar icone e texto*/
+    display: flex;
+}
+
+#description-container h3 {
+    /* tamanho da fonte */
+    font-size: 25px;
+    /* Negrito */
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+#info-container ion-icon{
+    font-size: 20px;
+    color: #f2a340;
+    margin-right: 5px;
+}
+
+#car-submit {
+    margin-top: 20px;
+}
+
 /* Car create page */
 #car-create-container {
     padding: 30px;
@@ -170,7 +214,6 @@ footer p {
 #car-create-container textarea {
     /*tamanho fonte*/
     font-size: 12px;
-
 }
 
 
