@@ -18,6 +18,12 @@
                 <p class="car-interested"><ion-icon name="people-outline"></ion-icon> 0 - Interessado(s)</p> 
                 <p class="car-owner"><ion-icon name="star-outline"></ion-icon> Dono do carro</p>
                 <a href="#" class="btn btn-primary" id="car-submit">Confirmar Interesse</a>
+                <h3>Carro possui:</h3>                
+                <ul id="itens-list">
+                    @foreach($car->itens as $item)
+                        <li><ion-icon name="play-outline"></ion-icon><span>{{ $item }}</span></li>
+                    @endforeach
+                </ul>
             </div>
 
             <div class= "col-md-12" id="description-container">

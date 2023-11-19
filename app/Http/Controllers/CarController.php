@@ -24,10 +24,11 @@ class CarController extends Controller
         $Msg = "Carro salvo com sucesso!";
         
         $car->model = $request->model;
+        $car->date = $request->date;
         $car->city = $request->city;
         $car->zerokm = $request->zerokm;  
         $car->description = $request->description;
-
+        $car->itens = $request->itens; 
         //image upload
         if($request->hasFile('image') && $request->file('image')->isValid()){
             $requestimage = $request->image;            
@@ -37,7 +38,6 @@ class CarController extends Controller
             $requestimage->move(public_path('img/cars'), $imagename);    
             $car->image = $imagename;
         }
-
         
         $car->save();
 

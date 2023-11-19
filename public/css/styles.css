@@ -1,4 +1,4 @@
-/* General */
+/* General -> main.blade.php - INICIO */
 * {
     font-family: Roboto;
 }
@@ -46,8 +46,8 @@ header {
     /*ESPAÇAMENTO INTERNO*/
     padding: 10px;    
 }
-
-/* navbar main.blade.php */
+/* General -> main.blade.php - FIM */
+/* navbar -> main.blade.php - INICIO */
 #navbar {
     justify-content: space-between;
     background-color: #fff;
@@ -66,8 +66,8 @@ header {
 #navbar img {
     width: 40px;
 }
-
-/* search container welcome.blade.php */
+/* navbar -> main.blade.php - FIM */
+/* search-container -> welcome.blade.php - INICIO */
 #search-container {
     background-image: url("../img/paineis-porsche-911-carrera.jpg");  
     background-size: cover;     
@@ -87,8 +87,8 @@ header {
     width: 50%;   
     margin: 0 auto; 
 }
-
-/* Cars List */
+/* search-container -> welcome.blade.php - FIM */
+/* cars-container -> welcome.blade.php - INICIO */
 #cars-container {
     padding: 50px;   
 }
@@ -139,8 +139,8 @@ header {
 #cards-container {
     display: flex;
 }
-
-/* footer */
+/* cars-container -> welcome.blade.php - FIM */
+/* footer -> main.blade.php - INICIO */
 footer {
     text-align: center;
     background-color: #353e48;
@@ -154,6 +154,7 @@ footer {
 footer p {
     margin-bottom: 0;
 }
+/* footer -> main.blade.php - FIM */
 
 /* Car show page */
 #image-container, 
@@ -181,12 +182,13 @@ footer p {
     display: flex;
 }
 
+#info-container h3,
 #description-container h3 {
     /* tamanho da fonte */
     font-size: 25px;
     /* Negrito */
     font-weight: 900;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 #info-container ion-icon{
@@ -197,6 +199,17 @@ footer p {
 
 #car-submit {
     margin-top: 20px;
+}
+
+#itens-list {
+    /* tira o ponto lateral da lista */
+    list-style: none;
+    /* tira o padding da esquerda */
+    padding-left: 0;
+}
+
+#itens-list li {
+    display: flex;
 }
 
 /* Car create page */

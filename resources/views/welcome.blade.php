@@ -13,23 +13,29 @@
 
 <div id="cars-container" class="col-md-12">
 
-    <h2>Carros já cadastrados</h2>
-
-    <p class=subtitle >Próximos carros</p>
+    @if(count($cars) == 0)
+        <h2>Não há carro disponível!</h2>
+    @elseif(count($cars) == 1)
+        <h2>Carro disponível:</h2>
+    @else 
+        <h2>Carros disponíveis:</h2>
+    @endif    
 
     <div id="cards-container" class="row">
 
         @foreach($cars as $car)
+            
             <div class="card col-md-3">
                 <img src="/img/cars/{{ $car->image }}" alt="{{ $car->model }}">            
                 <div class="card-body">
-                    <p class="card-date">data da inclusão 18/11/2023</p>
+                    <p class="card-date">data da inclusão: {{ date('d/m/Y', strtotime($car->date))}}</p>
                     <h5 class="card-model">{{ $car->model }}</h5>
                     <p class="card-interested">X interessado</p>
                     <a href="/cars/{{ $car->id }}" class="btn btn-primary">Saber mais</a>
                 </div>
             </div>
-        @endforeach
+
+        @endforeach     
 
     </div>
 
