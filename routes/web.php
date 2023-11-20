@@ -23,3 +23,13 @@ Route::get('/cars/{id}', [CarController::class,'show']);
 Route::post('/cars', [CarController::class,'store']);
 
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

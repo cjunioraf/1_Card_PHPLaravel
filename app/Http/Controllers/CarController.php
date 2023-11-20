@@ -9,9 +9,19 @@ use App\Models\Car;
 class CarController extends Controller
 {
     public function index(){
-        //select * from 
-        $cars = Car::all();
-        return view('welcome',['cars' => $cars]);
+        //verifica se vem algo no search
+        $search = request('search');
+
+        if($search){
+            //select * from cars where model like '%search%'
+            $cars = Car::where('model', 'like', '%' .$search.'%')->get();
+        } else {
+            //select * from                 
+            $cars = Car::all();
+        }
+        
+        
+        return view('welcome',['cars' => $cars, 'search'=> $search]);
     }
 
     public function create(){
