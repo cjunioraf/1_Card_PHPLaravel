@@ -22,5 +22,8 @@ Route::get('/cars/create', [CarController::class,'create'])->middleware('auth');
 Route::get('/cars/{id}', [CarController::class,'show']);
 /* Rota chama a classe store da controller CarController */
 Route::post('/cars', [CarController::class,'store']);
+/* destroy padronização do laravel*/
+Route::delete('/cars/{id}', [CarController::class,'destroy']);
 Route::get('/dashboard', [CarController::class,'dashboard'])->middleware('auth');
+
 

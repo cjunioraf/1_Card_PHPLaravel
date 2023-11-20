@@ -140,6 +140,24 @@ header {
     display: flex;
 }
 /* cars-container -> welcome.blade.php - FIM */
+
+/* Dashboard -> /views/cars/dashboard.blade.php - INICIO */
+
+.dashboard-title-container{
+    margin-bottom: 30px;
+    margin-top: 30PX;    
+}
+
+.dashboard-cars-container th {
+    width: 25%;
+}
+
+.dashboard-cars-container form {
+    /* botão editar e deletar ficam um ao lado do outro */
+    display: inline-block;
+}
+
+/* Dashboard -> /views/cars/dashboard.blade.php - FIM */
 /* footer -> main.blade.php - INICIO */
 footer {
     text-align: center;

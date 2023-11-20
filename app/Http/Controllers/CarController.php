@@ -66,9 +66,15 @@ class CarController extends Controller
         return view('cars.show',['car'=> $car, 'carOwner' => $carOwner]);    
 
     }
+
+    public function destroy($id){
+        Car::findOrFail($id )->delete();
+        return redirect('/dashboard')->with('msg','Carro deletado com sucesso!');
+    }
+
     public function dashboard(){
         $user = auth()->user();
         $cars = $user->cars;
         return view('cars.dashboard',['cars'=> $cars]);
-    }
+    }    
 }
