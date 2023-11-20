@@ -37,13 +37,32 @@
                         <li class="nav-item">
                             <a href="/cars/create" class="nav-link">Cadastrar</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="/" class="nav-link">Entrar</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a href="/" class="nav-link">PHP Laravel</a>
-                        </li>
+
+                        @auth
+                            <li class="nav-item">
+                                <a href="/dashboard" class="nav-link">Meus Carros</a>
+                            </li>
+                            <li class="nav-item">                                
+                                <form method="POST" action="/logout">
+                                    @csrf
+                                    <a href="/logout" 
+                                        class="nav-link" 
+                                        onclick="event.preventDefault(); 
+                                                this.closest('form').submit();">
+                                    Logout</a>
+                                </form>
+                            </li>
+                        @endauth
+
+                        @guest
+                            <li class="nav-item">
+                                <a href="/login" class="nav-link">Login</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a href="/register" class="nav-link">Registrar</a>
+                            </li>
+                        @endguest
 
                     </ul>    
 

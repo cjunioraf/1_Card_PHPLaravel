@@ -16,7 +16,7 @@
                 <h1>{{ $car->model }}</h1>
                 <p class="car-city"><ion-icon name="location-outline"></ion-icon>{{ $car->city }}</p>
                 <p class="car-interested"><ion-icon name="people-outline"></ion-icon> 0 - Interessado(s)</p> 
-                <p class="car-owner"><ion-icon name="star-outline"></ion-icon> Dono do carro</p>
+                <p class="car-owner"><ion-icon name="star-outline"></ion-icon> {{ $carOwner['name'] }}</p>
                 <a href="#" class="btn btn-primary" id="car-submit">Confirmar Interesse</a>
                 <h3>Carro possui:</h3>                
                 <ul id="itens-list">

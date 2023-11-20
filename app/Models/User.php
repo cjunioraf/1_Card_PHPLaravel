@@ -58,4 +58,8 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    //aqui indica que o relacionamento da tabela users com a tabela car é de 1 pra n hasMany; Model/Car.
+    public function cars(){
+        return $this->hasMany('App\Models\Car');
+    }
 }
