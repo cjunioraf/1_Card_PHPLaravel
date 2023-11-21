@@ -74,7 +74,14 @@ class CarController extends Controller
 
     public function edit($id){
 
+        $user = auth()->user();      
+        
         $car = Car::findOrFail($id);
+
+        if($user->id != $car->user_id){
+            return redirect('/dashboard')->with('msg','Usuário sem permissão!');
+        }        
+
         return view('cars.edit',['car'=> $car]);
     }
 
@@ -97,9 +104,14 @@ class CarController extends Controller
     }
 
     public function dashboard(){
+        
         $user = auth()->user();
+
         $cars = $user->cars;
-        return view('cars.dashboard',['cars'=> $cars]);
+
+        $carsASinterested = $user->carsASinterested;
+
+        return view('cars.dashboard',['cars'=> $cars, 'carsASinterested' => $carsASinterested]);
     }   
 
     public function joincar($id){
@@ -111,6 +123,17 @@ class CarController extends Controller
         $car = Car::findOrFail($id); 
 
         return redirect('/dashboard')->with('msg','Seu interesse está confirmado no carro ' . $car->model . '!');
+    }
+
+    public function leavecar($id){
+        
+        $user = auth()->user();
+        //detach - remove da tabela car_user o registro gerado pela função JOINCAR.
+        $user->carsASinterested()->detach($id);
+
+        $car = Car::findOrFail($id); 
+
+        return redirect('/dashboard')->with('msg','Retirou interesse no carro ' . $car->model . '!');
 
     }
 }

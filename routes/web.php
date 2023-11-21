@@ -29,7 +29,10 @@ Route::get('/cars/edit/{id}', [CarController::class,'edit'])->middleware('auth')
 Route::put('/cars/update/{id}', [CarController::class,'update'])->middleware('auth');
 
 Route::get('/dashboard', [CarController::class,'dashboard'])->middleware('auth');
-
+/* vincula usuário e carro na tabela car_user */
 Route::post('/cars/join/{id}', [CarController::class, 'joincar'])->middleware('auth');
+
+Route::delete('/cars/leave/{id}', [CarController::class, 'leavecar'])->middleware('auth');
+
 
 
