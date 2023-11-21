@@ -66,15 +66,51 @@ class CarController extends Controller
         return view('cars.show',['car'=> $car, 'carOwner' => $carOwner]);    
 
     }
-
     public function destroy($id){
+
         Car::findOrFail($id )->delete();
         return redirect('/dashboard')->with('msg','Carro deletado com sucesso!');
+    }
+
+    public function edit($id){
+
+        $car = Car::findOrFail($id);
+        return view('cars.edit',['car'=> $car]);
+    }
+
+    public function update(Request $request){
+        
+        $record = $request->all();    
+
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+            $requestimage = $request->image;            
+            $extension = $requestimage->extension();
+            $imagename = md5($requestimage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+            //Faz o uploade do arquivo do servidor
+            $requestimage->move(public_path('img/cars'), $imagename);    
+            $record['image'] = $imagename;
+        }  
+
+        Car::findOrFail($request->id)->update($record);
+        return redirect('/dashboard')->with('msg','Carro editado com sucesso!');
+
     }
 
     public function dashboard(){
         $user = auth()->user();
         $cars = $user->cars;
         return view('cars.dashboard',['cars'=> $cars]);
-    }    
+    }   
+
+    public function joincar($id){
+
+        $user = auth()->user();
+        //carASinterested função criada no \App\Models\User attach usuário + id do carro na tabela car_user
+        $user->carsASinterested()->attach($id);
+        
+        $car = Car::findOrFail($id); 
+
+        return redirect('/dashboard')->with('msg','Seu interesse está confirmado no carro ' . $car->model . '!');
+
+    }
 }

@@ -23,7 +23,13 @@ Route::get('/cars/{id}', [CarController::class,'show']);
 /* Rota chama a classe store da controller CarController */
 Route::post('/cars', [CarController::class,'store']);
 /* destroy padronização do laravel*/
-Route::delete('/cars/{id}', [CarController::class,'destroy']);
+Route::delete('/cars/{id}', [CarController::class,'destroy'])->middleware('auth');
+Route::get('/cars/edit/{id}', [CarController::class,'edit'])->middleware('auth');
+/* update */
+Route::put('/cars/update/{id}', [CarController::class,'update'])->middleware('auth');
+
 Route::get('/dashboard', [CarController::class,'dashboard'])->middleware('auth');
+
+Route::post('/cars/join/{id}', [CarController::class, 'joincar'])->middleware('auth');
 
 

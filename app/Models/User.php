@@ -62,4 +62,9 @@ class User extends Authenticatable
     public function cars(){
         return $this->hasMany('App\Models\Car');
     }
+    //aqui indica que o relacionamento da tabela users com a tabela car é de n pra n belongsToMany; Model/Car.
+    public function carsASinterested(){
+        return $this->belongsToMany('\App\Models\Car');        
+    }
+
 }

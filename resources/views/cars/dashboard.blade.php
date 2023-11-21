@@ -33,7 +33,7 @@
                             <td><a href="/cars/{{ $car->id }}"> {{ $car->model }}</a></td>
                             <td>0</td>
                             <td>
-                                <a href="#" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon>Editar</a>
+                                <a href="/cars/edit/{{ $car->id }}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon>Editar</a>
                                 
                                 <form action="/cars/{{ $car->id }}" method="POST">
                                     @csrf

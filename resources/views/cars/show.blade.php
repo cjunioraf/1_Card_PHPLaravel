@@ -13,11 +13,23 @@
             </div>
 
             <div id="info-container" class= "col-md-6">
+                
                 <h1>{{ $car->model }}</h1>
                 <p class="car-city"><ion-icon name="location-outline"></ion-icon>{{ $car->city }}</p>
-                <p class="car-interested"><ion-icon name="people-outline"></ion-icon> 0 - Interessado(s)</p> 
+                <p class="car-interested"><ion-icon name="people-outline"></ion-icon> {{ count($car->users) }} Interessado(s)</p> 
                 <p class="car-owner"><ion-icon name="star-outline"></ion-icon> {{ $carOwner['name'] }}</p>
-                <a href="#" class="btn btn-primary" id="car-submit">Confirmar Interesse</a>
+
+                <form action="/cars/join/{{ $car->id }}" method="POST">
+
+                    @csrf                    
+                    
+                    <a href="/cars/join/{{ $car->id }}" 
+                       class="btn btn-primary" 
+                       id="car-submit" onclick="event.preventDefault(); this.closest('form').submit();">Confirmar Interesse
+                    </a>
+
+                </form>               
+
                 <h3>Carro possui:</h3>                
                 <ul id="itens-list">
                     @foreach($car->itens as $item)
