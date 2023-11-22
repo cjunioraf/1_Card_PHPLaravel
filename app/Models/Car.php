@@ -10,7 +10,7 @@ class Car extends Model
     use HasFactory;
     protected $casts = ['itens' => 'array'] ;
     protected $dates = ['date'];
-    //aqui indica qu e no UPDATE tudo que vem do POST pode ser atualizado sem restrição $guarded = []
+    //aqui indica que no UPDATE tudo que vem do POST pode ser atualizado sem restrição $guarded = []
     protected $guarded = [];
     //aqui indica que o relacionamento da tabela cars com a tabela users é de 1 pra 1 belongsTo; Model/User. 
     public function user(){

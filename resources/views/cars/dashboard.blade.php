@@ -86,7 +86,7 @@
                                 <form action="/cars/leave/{{ $car->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash-outline"></ion-icon>Sair do Evento</button>
+                                    <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash-outline"></ion-icon>Não tenho interesse</button>
                                 </form>
                             </td>
                             

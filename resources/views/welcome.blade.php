@@ -42,13 +42,16 @@
         @foreach($cars as $car)
             
             <div class="card col-md-3">
+
                 <img src="/img/cars/{{ $car->image }}" alt="{{ $car->model }}">            
+
                 <div class="card-body">
                     <p class="card-date">data da inclusão: {{ date('d/m/Y', strtotime($car->date))}}</p>
                     <h5 class="card-model">{{ $car->model }}</h5>
                     <p class="card-interested">{{ count($car->users) }} interessado(s)</p>
                     <a href="/cars/{{ $car->id }}" class="btn btn-primary">Saber mais</a>
                 </div>
+                
             </div>
 
         @endforeach     

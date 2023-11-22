@@ -156,7 +156,6 @@ header {
 }
 /* Dashboard -> /views/cars/dashboard.blade.php - FIM */
 /* Edit Page -> /views/cars/edit.blade.php - INICIO */
-
 .img-preview {    
     width: 150PX;
     margin-top: 20PX;
@@ -179,8 +178,7 @@ footer p {
     margin-bottom: 0;
 }
 /* footer -> main.blade.php - FIM */
-
-/* Car show page */
+/* car show Page -> /views/cars/show.blade.php - INICIO */
 #image-container, 
 #info-container {
     margin-top: 30px;
@@ -236,6 +234,20 @@ footer p {
     display: flex;
 }
 
+#info-container .joined-msg{
+    margin: 15px 0;  
+    background-color: #f2a340;  
+    /* tamanho da fonte */
+    font-size: 18px;
+    /* Negrito */
+    font-weight: 900;  
+    color:#fff;
+    padding: 10px; 
+    width: 330px;
+    border: 2px solid #c28008;    
+        
+}
+/* car show Page -> /views/cars/show.blade.php - FIM */
 /* Car create page */
 #car-create-container {
     padding: 30px;

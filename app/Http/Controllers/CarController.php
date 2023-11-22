@@ -60,10 +60,26 @@ class CarController extends Controller
     public function show($id){
 
         $car = Car::findOrFail($id); 
+        //valida se o interessado já não tem interesse registrado no carro, para não gerar + de 1 interesse no mesmo carro.    
+        //pega o usuário logado
+        $user = auth()->user();  
+        $userJoined = false; 
+        //verifica se o usuário está logado    
+        if($user){
+            //pega todos os carros interessados pelo usuário e joga no array
+            $userCars = $user->carsASinterested->toArray();            
+
+            foreach($userCars as $useCar){
+
+                if($id == $useCar['id']){
+                    $userJoined = true;
+                }                    
+            }
+        }
         //select * from users where id = $car->user_id - first - primeiro usuário que encontrar(não varre o banco) - toArray transforma o obj em array.
         $carOwner = User::where('id', $car->user_id)->first()->toArray();
 
-        return view('cars.show',['car'=> $car, 'carOwner' => $carOwner]);    
+        return view('cars.show',['car'=> $car, 'carOwner' => $carOwner, 'userJoined' => $userJoined]);    
 
     }
     public function destroy($id){

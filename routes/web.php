@@ -24,6 +24,7 @@ Route::get('/cars/{id}', [CarController::class,'show']);
 Route::post('/cars', [CarController::class,'store']);
 /* destroy padronização do laravel*/
 Route::delete('/cars/{id}', [CarController::class,'destroy'])->middleware('auth');
+
 Route::get('/cars/edit/{id}', [CarController::class,'edit'])->middleware('auth');
 /* update */
 Route::put('/cars/update/{id}', [CarController::class,'update'])->middleware('auth');
